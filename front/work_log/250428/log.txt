@@ -1,0 +1,5 @@
+# Reactアプリをローカルで起動（https://qiita.com/ta1fukumoto/items/2b05ed74ba7332598d5f）
+user@DESKTOP-UPSBG35:~/momobib_front/test-app$ npm run build
+user@DESKTOP-UPSBG35:~/momobib_front/test-app$ npm start
+
+

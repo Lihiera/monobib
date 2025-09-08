@@ -1,0 +1,10 @@
+# node.js, npmをインストール（https://qiita.com/nouernet/items/d6ad4d5f4f08857644de）
+user@DESKTOP-UPSBG35:~$ sudo apt update
+user@DESKTOP-UPSBG35:~$ sudo apt install -y nodejs npm
+user@DESKTOP-UPSBG35:~$ sudo npm install n -g
+user@DESKTOP-UPSBG35:~$ sudo n stable
+user@DESKTOP-UPSBG35:~$ sudo apt purge -y nodejs npm
+user@DESKTOP-UPSBG35:~$ sudo apt autoremove -y
+
+# Reactアプリを作成
+user@DESKTOP-UPSBG35:~/momobib_front$ npx create-react-app test-app
