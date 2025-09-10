@@ -1,0 +1,22 @@
+.logo {
+    margin: 0 1em;
+}
+
+.textLink {
+    color: white;
+    text-decoration: none;
+    margin: 0 1em;
+    font-size: 1.6rem;
+}
+
+.textLink:hover {
+    text-decoration: underline;
+    background-color: gray;
+}
+
+.footerContent {
+    height: 100%;
+    width: 80%;
+    margin: 30px auto;
+}
+

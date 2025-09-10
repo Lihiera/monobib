@@ -1,0 +1,60 @@
+@import url(./font.css);
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    font-size:10px;
+}
+
+body {
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    "MS PGothic",
+    sans-serif;
+    background-color:rgb(222, 225, 228);
+    font-size: 1.6rem;
+}
+
+header {
+    padding: 7px 2em;
+    display: flex;
+    align-items: center;
+    background-color:rgba(233, 119, 12, 0.849);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+}
+
+footer {
+    text-align: left;
+    color: #666;
+    font-size: 1.4rem;
+    height: 100px;
+}
+
+footer::before {
+    content: "";
+    margin: auto;
+    display: block;
+    width: 1200px;
+    height: 0;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.288);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
