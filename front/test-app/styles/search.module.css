@@ -1,0 +1,60 @@
+.subtitle {
+    font-size: 2rem;
+    width: 100%;
+}
+
+.items {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: rgb(19, 189, 189);
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: rgb(4, 46, 46);
+    color: white;
+}
+
+.searchContent {
+  background: url('/public/japan06.png') no-repeat top right;
+  background-color: #f9f9f9;
+  background-size: 600px auto;
+}
+
+.hokkaidou {
+    background-color: rgba(34, 158, 106, 0.774);
+}
+
+.kanto {
+    background-color: rgba(84, 69, 172, 0.712);
+}
+.chubu {
+    background-color: rgba(255, 0, 234, 0.555);
+}
+.kinki {
+    background-color: rgba(240, 185, 4, 0.76);
+}
+.chugoku {
+    background-color: rgba(224, 91, 14, 0.644);
+}
+.shikoku {
+    background-color: rgba(153, 116, 16, 0.884);
+}
+
+.kyushu {
+    background-color: rgba(255, 0, 0, 0.555);
+}
+.okinawa {
+    background-color: rgba(255, 0, 0, 0.555);
+}

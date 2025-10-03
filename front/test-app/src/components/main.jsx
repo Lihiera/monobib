@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import styles from '../../styles/home.module.css'
-import { MyButton } from './tools.jsx';
 
 
 
@@ -22,9 +22,9 @@ function Main() {
                 </div>
             </div>
             <div className={styles.actions}>
-                <MyButton text="Login Now" fontSize='3em' />
+                <Link to="/login" className={styles.btn}>Login Now</Link>
                 <span>OR</span>
-                <MyButton text="Use Without Login" fontSize='3em' />
+                <Link to="/search" className={styles.btn}>Use Without Login</Link>
             </div>
             <p className={styles.note}>
                 If you don't have an account, please create one by clicking <a href="#">"アカウント作成"</a>.

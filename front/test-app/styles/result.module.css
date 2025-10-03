@@ -1,0 +1,345 @@
+
+.resultContent {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    min-height: 800px;
+    max-height: 80vh;
+    width: 80%;
+    gap: 10px;
+}
+
+.load {
+    width: 100%;
+    height:100%;
+}
+
+.error {
+    width: 100%;
+    height:100%;
+}
+
+.resItems {
+    flex: 1;
+    padding-right:5px;
+    border-right:2px solid black;
+    margin-right: 10px;
+}
+.map {
+    flex: 2;
+}
+
+
+/* settings.jsx */
+.settings {
+    display: flex;
+    padding: 1em 1em;
+    padding-left: 100px;
+    padding-bottom:0;
+    margin:0 auto;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.btn {
+    color: #001aff;
+    text-decoration: none;
+    margin-right:5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+
+}
+
+.btn:visited {
+    color: #001aff;
+}
+
+.btn:hover {
+    color: #ffa600;
+    background-color: gray;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btn:active {
+    color: red;
+    background-color: #001aff00;
+}
+
+.btn[disabled] {
+    color: #00ff40;
+    background-color: rgb(201, 33, 47);
+    cursor:auto;
+}
+
+
+
+.formContainer {
+    border: 1px solid black;
+    display: flex;
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: bisque;
+    height: 50px;
+    align-items: center;
+
+}
+
+.settingItem {
+    padding: 1px 5px;
+    font-size: 1.5rem;
+    margin-right: 1.2em;
+    margin-left: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.37);
+    height: 30px;
+    width:90px;
+    position: relative;
+}
+
+.settingItem::after {
+    content: "🔻";
+    position: absolute;
+    right:5px;
+    font-size: 1.5em;
+    top: -15%;
+}
+
+.settingItem:hover {
+    background-color: rgba(19, 195, 207, 0.651);
+    cursor: pointer;
+}
+
+.settings bottom {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1px 5px;
+    background-color:rgb(118, 80, 255);
+    color: white;
+}
+
+.region {
+    display:block;
+    font: inherit;
+    text-align: left;
+}
+
+.region:disabled{
+    cursor:auto;
+}
+
+.region:disabled:hover{
+    background-color: rgba(128, 128, 128, 0.37);
+}
+
+.settings bottom:hover {
+    background-color: rgba(66, 7, 114, 0.39);
+    cursor: pointer;
+}
+
+.regionChoose {
+    position: absolute;
+    top: 110%;
+    background-color: rgb(19, 195, 207);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10000;
+
+}
+
+.sourceChoose {
+    position: absolute;
+    top: 110%;
+    left: 30%;
+    background-color: rgba(19, 195, 207);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10000;
+}
+
+.sourceBtn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtitle {
+    font-size:1.2em;
+    margin-top: 10px;
+}
+
+.cancel {
+    font-size: 2em;
+    text-align: right;
+}
+
+.cancel:hover {
+    cursor: pointer;
+}
+
+.color {
+    background-color: rgba(19, 195, 207, 0.651);
+}
+
+.color::after {
+    content: "🔻";
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.mode {
+    display:flex;
+    align-items: center;
+    margin-right:10px;
+    font-size:large;
+    gap:5px;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; 
+  border-radius: 34px; 
+  transition: .4s;
+}
+
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white; 
+  border-radius: 50%; 
+  transition: .4s; 
+}
+
+
+.switch input:checked + .slider {
+  background-color: #2196F3; 
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+
+/* styles of images */
+.resContainer {
+    margin: 10px;
+    border: 7px double black;
+    border-radius: 7px;
+    padding: 5px;
+    background-color: beige;
+}
+
+.ContentContainer {
+    height:95%;
+    overflow:auto;
+
+}
+
+.resItems p {
+    margin:0;
+    padding:0;
+}
+
+.resContainer a {
+    display: block flex;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.resContainer a:focus-visible {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.imageContainer {
+    height: 150px;
+    width: 30%;
+}
+
+.images {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detailContainer h1 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.pagination {
+    margin-top:5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination button {
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    cursor: auto;
+}
+
+/* styles of map */
+.map {
+    min-height: 100%;
+    border: 5px solid black;
+}
+
+.popContent {
+    height: 300px;
+    width: 300px;
+    display:flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.popContent img {
+    width: 90%;
+    height: 65%;
+    object-fit: cover;
+    align-self: center;
+    margin-bottom: 1.5em;
+}
+.popContent a::after {
+    content:"⤴️";
+}
+
+.popContent strong {
+    margin-bottom: 5px;
+}
+

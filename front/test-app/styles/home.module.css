@@ -27,6 +27,12 @@
     margin-top: 50px;
 }
 
+.title {
+    font-size: 6rem;
+    width: 100%;
+    margin: auto 1em;
+}
+
 .intro h1 {
     font-size: 6rem;
     width: 100%;
@@ -113,4 +119,18 @@
     font-size: 1em;
     color: #555;
     text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 2em;
+    color: white;
+    background-color: rgb(4, 46, 46);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
