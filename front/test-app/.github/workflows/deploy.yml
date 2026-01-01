@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ feat/to-vite ]
+    branches: [ "feat/to-vite" ]
   workflow_dispatch:
 
 permissions:
