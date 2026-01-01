@@ -1,12 +1,12 @@
 import layout from '../../styles/layout.module.css'
 import { Link } from 'react-router-dom';
-
+import logo3 from '../assets/logo3.png'
 
 function Header() {
     return (
         <header>
             <Link to='/'>
-            <img className={layout.logo} title="HomePage" src="../public/logo3.png" alt="Home" height="50" />
+            <img className={layout.logo} title="HomePage" src={logo3} alt="Home" height="50" />
             </Link>
             <div className={layout.nav}>
                 <a className={layout.textLink} href="/">アカウント作成</a>
@@ -22,7 +22,7 @@ function Footer() {
         <footer>
             <div className={layout.footerContent}>
             <Link to='/'>
-            <img className={layout.logo} title="HomePage" src="../public/logo3.png" alt="Home" height="50" />
+            <img className={layout.logo} title="HomePage" src={logo3} alt="Home" height="50" />
             </Link>
             </div>
         </footer>

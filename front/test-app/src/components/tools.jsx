@@ -7,4 +7,11 @@ function MyButton({ onClick, text, fontSize }) {
     );
 }
 
-export { MyButton };
+
+function MyImage({ src, ...props }) {
+    const url = new URL(src, import.meta.url).href;
+    return <img src={url} {...props} />;
+}
+
+
+export { MyButton, MyImage };
