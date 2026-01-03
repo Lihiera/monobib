@@ -30,7 +30,7 @@ function Items({count}) {
             method: 'POST',
             body: formData
         }
-        const res =  await fetch(`http://localhost:8080/result?region=${region}&source=${source}&page=${page}`, requestOptions);
+        const res =  await fetch(`https://mono-back.onrender.com/result?region=${region}&source=${source}&page=${page}`, requestOptions);
         return res.json();
     }
   });
@@ -90,7 +90,7 @@ function Result() {
             method: 'POST',
             body: formData
         }
-        const res =  await fetch(`http://localhost:8080/metadata?region=${settings.region}&priceLow=${settings.priceRange.low}&priceHigh=${settings.priceRange.high}&source=${settings.source}`, requestOptions);
+        const res =  await fetch(`https://mono-back.onrender.com/metadata?region=${settings.region}&priceLow=${settings.priceRange.low}&priceHigh=${settings.priceRange.high}&source=${settings.source}`, requestOptions);
         return res.json();
     }
   });
