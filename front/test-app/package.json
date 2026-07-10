@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://Lihiera.github.io/monobib",
+  "homepage": "https://Lihiera.github.io/Lihiera/restaurant-map-frontend",
   "eslintConfig": {
     "extends": [
       "react-app",
