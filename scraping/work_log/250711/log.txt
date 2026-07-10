@@ -1,3 +1,0 @@
-# tabelog.py - awardsテーブルに書き込むよう修正
-# tabelog.py - 国土地理院で緯度・経度が不明だった場合はGoogle Mapを使用するよう修正
-# データベースを正規化
