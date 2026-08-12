@@ -7,6 +7,26 @@ import Map from "./map"
 
 const API_BASE_URL = 'https://mono-back.onrender.com';
 
+function formatRank(rank, source) {
+    if (!rank) {
+        return 'Not listed';
+    }
+
+    if (source === 'michelin') {
+        const michelinRanks = {
+            selected: 'Michelin Selected',
+            'bib-gourmand': 'Bib Gourmand',
+            'one-star': '1 Michelin Star',
+            'two-stars': '2 Michelin Stars',
+            'three-stars': '3 Michelin Stars',
+            'green-star': 'Michelin Green Star',
+        };
+        return michelinRanks[rank] || rank.replaceAll('-', ' ');
+    }
+
+    return rank;
+}
+
 
 function Items({count}) {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -56,7 +76,7 @@ function Items({count}) {
                     <ul>
                         <li>{res.city_area}  {res.region}</li>
                         <li>Categories: {res.cuisines[0]}</li>
-                        <li>Stars: {res.rank}</li>
+                        <li>Rating: {formatRank(res.rank, source)}</li>
                         <li>Price: {res.price_range}</li>
                     </ul>
                 </div>

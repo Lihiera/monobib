@@ -22,7 +22,7 @@ function Setting({settings, mode, setMode}) {
     const sourceChoose = useRef(null);
     const colorRegion = regionVisit?styles.color:"";
     const colorSource = sourceVisit?styles.color:"";
-    const remind = !mode?"Disabled because of map mode":""
+    const remind = !mode?"Turn on Area Selector to change regions":""
     useEffect(()=> {
         const cancelRegion = (event) => {
             if (regionBtn.current &&
@@ -56,7 +56,7 @@ function Setting({settings, mode, setMode}) {
     return (
         <div className={styles.settings}>
             <div className={styles.mode}>
-            <span>Use Map Mode:</span>
+            <span>Area Selector:</span>
                 <label className={styles.switch}>
                     <input type="checkbox" checked={mode} onChange={()=>setMode(mode=>!mode)} />
                     <span className={styles.slider}></span>

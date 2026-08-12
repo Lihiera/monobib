@@ -24,7 +24,7 @@ function Main() {
                 </div>
             </div>
             <div className={styles.actions}>
-                <Link to="/search" className={styles.btn}>Use Without Login</Link>
+                <Link to="/search" className={styles.btn}>Start Browsing</Link>
             </div>
         </main>
     );
