@@ -3,20 +3,19 @@
     display: flex;
     margin: 0 auto;
     margin-top: 20px;
-    min-height: 800px;
-    max-height: 80vh;
-    width: 80%;
+    min-height: 720px;
+    height: 80vh;
+    width: min(1200px, calc(100% - 32px));
     gap: 10px;
 }
 
-.load {
+.load,
+.error,
+.empty {
     width: 100%;
-    height:100%;
-}
-
-.error {
-    width: 100%;
-    height:100%;
+    padding: 3rem 1rem;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .resItems {
@@ -33,11 +32,10 @@
 /* settings.jsx */
 .settings {
     display: flex;
-    padding: 1em 1em;
-    padding-left: 100px;
+    padding: 1em;
     padding-bottom:0;
     margin:0 auto;
-    width: 80%;
+    width: min(1200px, calc(100% - 32px));
     height: auto;
     align-items: center;
     font-size: 1.5rem;
@@ -85,6 +83,7 @@
     background-color: bisque;
     height: 50px;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
@@ -149,6 +148,7 @@
     border: 1px solid black;
     border-radius: 5px;
     z-index: 10000;
+    max-width: min(900px, calc(100vw - 32px));
 
 }
 
@@ -260,7 +260,7 @@
 }
 
 .ContentContainer {
-    height:95%;
+    height:calc(100% - 62px);
     overflow:auto;
 
 }
@@ -271,7 +271,7 @@
 }
 
 .resContainer a {
-    display: block flex;
+    display: flex;
     gap: 10px;
     color: inherit;
     text-decoration: none;
@@ -341,5 +341,69 @@
 
 .popContent strong {
     margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
+    .settings {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .formContainer {
+        width: 100%;
+        height: auto;
+        gap: 8px;
+    }
+
+    .settingItem {
+        margin-right: 0.6em;
+    }
+
+    .sourceChoose {
+        left: 16px;
+    }
+
+    .resultContent {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    .resItems {
+        border-right: 0;
+        border-bottom: 2px solid black;
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 12px;
+    }
+
+    .ContentContainer {
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .map {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 560px) {
+    .resContainer a {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        width: 100%;
+    }
+
+    .pagination {
+        gap: 12px;
+    }
+
+    .pagination button {
+        flex: 1;
+    }
 }
 

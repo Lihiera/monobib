@@ -49,7 +49,7 @@ footer::before {
     content: "";
     margin: auto;
     display: block;
-    width: 1200px;
+    width: min(1200px, calc(100% - 32px));
     height: 0;
     border-top: 1.5px solid rgba(0, 0, 0, 0.288);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

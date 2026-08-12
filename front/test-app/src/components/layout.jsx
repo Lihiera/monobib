@@ -9,8 +9,7 @@ function Header() {
             <img className={layout.logo} title="HomePage" src={logo3} alt="Home" height="50" />
             </Link>
             <div className={layout.nav}>
-                <a className={layout.textLink} href="/">アカウント作成</a>
-                <a className={layout.textLink} href="/">ログイン</a>
+                <Link className={layout.textLink} to="/search">Search</Link>
             </div>
         </header>
     );

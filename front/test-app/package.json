@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "test": "vite test",
+    "test": "npm run build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

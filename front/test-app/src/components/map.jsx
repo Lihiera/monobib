@@ -4,7 +4,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import styles from '../../styles/result.module.css'
-import  {useSearchParams, useParams} from 'react-router-dom'
+import  {useSearchParams} from 'react-router-dom'
 import { useEffect } from 'react'
 
 import markerIcon from 'leaflet/dist/images/marker-icon.png';

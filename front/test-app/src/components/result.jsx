@@ -1,10 +1,11 @@
 import styles from '../../styles/result.module.css'
-import  {useSearchParams, useParams} from 'react-router-dom'
+import  {useSearchParams} from 'react-router-dom'
 import {useState} from  "react"
 import Setting from "./setting"
 import { useQuery } from '@tanstack/react-query';
 import Map from "./map"
 
+const API_BASE_URL = 'https://mono-back.onrender.com';
 
 
 function Items({count}) {
@@ -20,29 +21,30 @@ function Items({count}) {
     });
   };
   const { data, error, isLoading, isError } = useQuery({
-    queryKey: ['region', region, page],
+    queryKey: ['result', region, source, page],
     queryFn: async () => {
-        const formData = new URLSearchParams()
-        // settings.cuisines.forEach((c) => {
-        //     formData.append('cuisines', c)
-        // })
         const requestOptions ={
             method: 'POST',
-            body: formData
         }
-        const res =  await fetch(`https://mono-back.onrender.com/result?region=${region}&source=${source}&page=${page}`, requestOptions);
+        const res =  await fetch(`${API_BASE_URL}/result?region=${encodeURIComponent(region)}&source=${encodeURIComponent(source)}&page=${page}`, requestOptions);
+        if (!res.ok) {
+            throw new Error(`Request failed with status ${res.status}`);
+        }
         return res.json();
     }
   });
     const nextDisabled = ((page+1)*10 >= count)
+    const end = Math.min((page + 1) * 10, count)
     return (
         <>
         {isLoading?
-            <div className={styles.load}>Loading...</div>:
+            <div className={styles.load}>Loading restaurants...</div>:
             (isError?
-            <div className={styles.error}>{`Error: ${error.message}`}</div>:
+            <div className={styles.error}>{`Could not load restaurants. ${error.message}`}</div>:
+            (!data || data.length === 0?
+            <div className={styles.empty}>No restaurants found for this page.</div>:
             <>
-        <p>{page*10+1} ~ {page*10+10} of {count} results</p>
+        <p>{page*10+1} ~ {end} of {count} results</p>
         <div className={styles.ContentContainer}>
         {data.map((res) => <div key={res.id} className={styles.resContainer}>
             <a href={res.url} target="_blank" rel="noopener noreferrer">
@@ -65,7 +67,7 @@ function Items({count}) {
             <button disabled={prevDisabled} onClick={()=>{gotoPage(page-1)}}>Previous Page</button>
             <button disabled={nextDisabled} onClick={()=>{gotoPage(page+1)}}>Next Page</button>
         </div>
-        </>)}
+        </>))}
         </>
         )
 }
@@ -74,34 +76,33 @@ function Items({count}) {
 
 
 function Result() {
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     const region = searchParams.get('region')||"北海道"
     const source = searchParams.get('source')||"tabelog"
-    const [settings, setSettings] = useState({region: region, source: source, cuisines: ['All'], priceRange:{low:0, high: -1}});
     const [mode, setMode] = useState(true)
+    const settings = {region, source}
     const { data, error, isLoading, isError } = useQuery({
-    queryKey: ['region', region],
+    queryKey: ['metadata', region, source],
     queryFn: async () => {
-        const formData = new URLSearchParams()
-        settings.cuisines.forEach((c) => {
-            formData.append('cuisines', c)
-        })
         const requestOptions ={
             method: 'POST',
-            body: formData
         }
-        const res =  await fetch(`https://mono-back.onrender.com/metadata?region=${settings.region}&priceLow=${settings.priceRange.low}&priceHigh=${settings.priceRange.high}&source=${settings.source}`, requestOptions);
+        const res =  await fetch(`${API_BASE_URL}/metadata?region=${encodeURIComponent(region)}&source=${encodeURIComponent(source)}`, requestOptions);
+        if (!res.ok) {
+            throw new Error(`Request failed with status ${res.status}`);
+        }
         return res.json();
     }
   });
-//   const errorMessage = `Error: ${error.message}`
     return (
         <section>
-            <Setting settings={settings} setSettings={setSettings} mode={mode} setMode={setMode} />
+            <Setting settings={settings} mode={mode} setMode={setMode} />
             {isLoading?
-            <div className={styles.load}>Loading...</div>:
+            <div className={styles.load}>Loading map data...</div>:
             (isError?
-            <div className={styles.error}>{`Error: ${error.message}`}</div>:
+            <div className={styles.error}>{`Could not load map data. ${error.message}`}</div>:
+            (!data || data.count === 0?
+            <div className={styles.empty}>No restaurants found in {region}.</div>:
             <div className={styles.resultContent}>
                 <div className={styles.resItems}>
                     <Items count={data.count}/>
@@ -109,7 +110,7 @@ function Result() {
                 <div className={styles.map}>
                     <Map data={data.data}/>
                 </div>
-            </div>)}
+            </div>))}
         </section>
     )
 }
